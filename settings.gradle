@@ -1,0 +1,1 @@
+include ':app', ':user_center', ':share', ':componentbase', ':base', ':main'

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/reg_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="51dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
+        android:text="账号："
+        app:layout_constraintBaseline_toBaselineOf="@+id/reg_userName"
+        app:layout_constraintEnd_toStartOf="@+id/reg_commit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/reg_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
+        android:text="密码："
+        app:layout_constraintBaseline_toBaselineOf="@+id/reg_pass"
+        app:layout_constraintEnd_toStartOf="@+id/reg_userName" />
+
+    <TextView
+        android:id="@+id/reg_rePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="264dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
+        android:text="确认密码："
+        app:layout_constraintEnd_toStartOf="@+id/reg_pass"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/reg_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="54dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="请输入用户名或账号"
+        app:layout_constraintBottom_toTopOf="@+id/reg_rePassword"
+        app:layout_constraintStart_toEndOf="@+id/reg_account" />
+
+    <EditText
+        android:id="@+id/reg_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="请输入密码"
+        app:layout_constraintStart_toEndOf="@+id/reg_password"
+        app:layout_constraintTop_toBottomOf="@+id/reg_userName" />
+
+    <EditText
+        android:id="@+id/reg_rePass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="请再次确认密码"
+        app:layout_constraintStart_toEndOf="@+id/reg_rePassword"
+        app:layout_constraintTop_toBottomOf="@+id/reg_pass" />
+
+    <Button
+        android:id="@+id/reg_commit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
+        android:text="提 交 注 册"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_rePass" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--title长按显示的文字
+    //默认全部不显示
+    //图标-->
+    <!--扫描-->
+    <item
+        android:id="@+id/title_scan"
+        android:title="扫描"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <!--添加-->
+    <item
+        android:id="@+id/title_add"
+        android:title="添加"
+        app:showAsAction="ifRoom" />
+    <!--设置-->
+    <item
+        android:id="@+id/title_setting"
+        android:title="设置"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <!--搜索-->
+    <item
+        android:id="@+id/title_search"
+        android:title="搜索"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <!--日期-->
+    <item
+        android:id="@+id/title_date"
+        android:title="日期"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+    <!--刷新-->
+    <item
+        android:id="@+id/title_refresh"
+        android:title="刷新"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+</menu>

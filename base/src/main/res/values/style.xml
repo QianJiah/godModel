@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomDialog">
+        <item name="android:windowFrame">@null</item>   <!--无边框-->
+        <item name="android:windowIsFloating">true</item>   <!--浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>   <!--不透明-->
+        <item name="android:windowNoTitle">true</item>  <!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item> <!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item>  <!--是否允许对话框的背景变暗-->
+        <item name="android:backgroundDimAmount">0.6</item>     <!--灰度-->
+    </style>
+</resources>
