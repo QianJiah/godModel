@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.loong.base.BaseApp;
 import com.loong.base.activity.MVPBaseActivity;
 import com.loong.base.error.ErrorMsgBean;
@@ -83,6 +84,7 @@ public class UserCenterActivity extends MVPBaseActivity<UserCenterPresenter> imp
         ToastUtil.show(BaseApp.getApplication(), "登录成功！");
         //保存登录状态到本地
         SharedPreferenceUtil.write(Constants.REF_NAME, Constants.IS_LOGIN, true);
+        ARouter.getInstance().build("/home/main_activity").navigation();
     }
 
     @Override

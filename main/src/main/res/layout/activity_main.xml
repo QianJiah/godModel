@@ -22,30 +22,30 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatRadioButton
-            android:drawableTop="@drawable/ic_back"
+            android:drawableTop="@drawable/ic_home"
             android:text="主页"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
         <androidx.appcompat.widget.AppCompatRadioButton
-            android:drawableTop="@drawable/ic_back"
+            android:drawableTop="@drawable/ic_project"
             android:textAlignment="center"
-            android:text="主页"
+            android:text="项目"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
         <androidx.appcompat.widget.AppCompatRadioButton
-            android:drawableTop="@drawable/ic_back"
-            android:text="主页"
+            android:drawableTop="@drawable/ic_system"
+            android:text="体系"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
         <androidx.appcompat.widget.AppCompatRadioButton
-            android:drawableTop="@drawable/ic_back"
-            android:text="主页"
+            android:drawableTop="@drawable/ic_person"
+            android:text="我的"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
