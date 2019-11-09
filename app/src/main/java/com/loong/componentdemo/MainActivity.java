@@ -1,6 +1,7 @@
 package com.loong.componentdemo;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -78,5 +79,45 @@ public class MainActivity extends AppCompatActivity {
     public void fragment(View view) {
         //这里在组件内，不是组件间跳转，可以直接使用startActivity
         startActivity(new Intent(this, FragmentActivity.class));
+    }
+
+    /**
+     * 跳过闪屏页
+     *
+     * @param view
+     */
+    public void jump(View view) {
+        if (timer != null) {
+            timer.cancel();
+            ARouter.getInstance().build("/account/login").navigation();
+            finish();
+        }
+    }
+
+    /**
+     * 沉浸式，隐藏状态栏和导航栏
+     * @param hasFocus
+     */
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            View decorView = getWindow().getDecorView();
+            decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (timer != null) {
+            timer.cancel();
+        }
     }
 }

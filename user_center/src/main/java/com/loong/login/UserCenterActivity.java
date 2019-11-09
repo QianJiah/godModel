@@ -6,6 +6,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -23,8 +27,9 @@ import com.loong.login.response.RegisterResult;
 @Route(path = "/account/login")
 public class UserCenterActivity extends MVPBaseActivity<UserCenterPresenter> implements UserCenterContract.View, View.OnClickListener {
 
-    private Button btnLogin, btnRegister;
-    private EditText etUserName, etPassword;
+    private TextView titleTv;
+    private ViewPager viewPager;
+    private LoginPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +40,17 @@ public class UserCenterActivity extends MVPBaseActivity<UserCenterPresenter> imp
     // 3.
     @Override
     protected void initData() {
-        btnRegister.setOnClickListener(this);
-        btnLogin.setOnClickListener(this);
+        titleTv.setText("");
+        adapter = new LoginPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(adapter);
+        adapter.setFragments(new LoginFragment());
     }
 
     // 2.
     @Override
     protected void initView() {
-        btnLogin = findViewById(R.id.login);
-        btnRegister = findViewById(R.id.register);
-        etUserName = findViewById(R.id.userName);
-        etPassword = findViewById(R.id.password);
+        titleTv = findViewById(R.id.title_name);
+        viewPager = findViewById(R.id.view_pager);
     }
 
     // 4.
@@ -57,7 +62,7 @@ public class UserCenterActivity extends MVPBaseActivity<UserCenterPresenter> imp
     // 1.
     @Override
     protected int getContentViewId() {
-        return R.layout.auto_constraint;
+        return R.layout.login_page;
     }
 
     public void login(View view) {
@@ -105,16 +110,6 @@ public class UserCenterActivity extends MVPBaseActivity<UserCenterPresenter> imp
 
     @Override
     public void onClick(View v) {
-        int i = v.getId();
-        if (i == R.id.login) {
-            String userName = etUserName.getText().toString();
-            String pass = etPassword.getText().toString();
-            Log.e("hao", "username:" + userName + " ,password:" + pass);
-            presenter.doLogin(userName, pass);
-        } else if (i == R.id.register) {
-            Intent intent = new Intent(this, RegisterActivity.class);
-            startActivity(intent);
-        }
 
     }
 }

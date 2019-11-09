@@ -46,6 +46,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         registerReceiver(receiver, intentFilter);
     }
 
+    /**
+     * 注销广播监听
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();

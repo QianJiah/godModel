@@ -3,4 +3,6 @@
     <color name="colorPrimary">#B290FC</color>
     <color name="colorPrimaryDark">#B290FC</color>
     <color name="colorAccent">#845EC9</color>
+    <color name="userCenter_mainBg">#ffB290FC</color>
+    <color name="userCenter_666">#666666</color>
 </resources>

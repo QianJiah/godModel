@@ -11,7 +11,7 @@ import com.loong.base.util.NetworkUtil;
 /**
  * author: Hao
  * date: 2019/10/8 16:00
- * description:
+ * description: 网络监听器
  */
 public class NetworkChangeReceiver extends BroadcastReceiver {
 

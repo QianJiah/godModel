@@ -46,7 +46,7 @@ public abstract class MVPBaseActivity<P extends IPresenter> extends BaseActivity
     public void showLoading() {
         LoadingDialog.Builder builder = new LoadingDialog.Builder(this);
         dialog = builder.setOutSideCancel(false)
-                .setCanceled(true)
+                .setCanceled(false)
                 .setShowMsg(true)
                 .setMsg("Loading...")
                 .create();
