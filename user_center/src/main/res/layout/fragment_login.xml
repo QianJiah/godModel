@@ -85,18 +85,19 @@
             android:singleLine="true"
             android:imeOptions="flagNoExtractUi|flagNoFullscreen"
             android:inputType="textPassword"
-            android:paddingLeft="5dp"
+            android:paddingStart="5dp"
             android:paddingTop="3dp"
             android:paddingBottom="3dp"
             android:textSize="15sp"/>
 
         <CheckBox
             android:id="@+id/cb_pwd_switch"
-            android:layout_width="0dp"
-            android:layout_weight="0.3"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:button="@drawable/ic_eye_normal"
-            android:gravity="center" />
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:button="@drawable/ic_eye_24dp" />
     </LinearLayout>
 
     <Button

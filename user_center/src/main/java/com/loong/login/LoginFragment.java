@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,9 +51,6 @@ public class LoginFragment extends Fragment {
         Drawable passDraw = getResources().getDrawable(R.drawable.ic_password_normal);
         passDraw.setBounds(0, 0, 44, 44);
         editText.setCompoundDrawables(passDraw, null, null, null);
-        Drawable eyeDraw = getResources().getDrawable(R.drawable.ic_eye_normal);
-        eyeDraw.setBounds(0, 0, 44, 44);
-        checkBox.setCompoundDrawables(eyeDraw, null, null, null);
         return mView;
     }
 }
