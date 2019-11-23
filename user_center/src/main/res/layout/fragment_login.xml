@@ -17,25 +17,25 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:rotation="180"
-            android:visibility="invisible"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_next"/>
+            android:src="@drawable/ic_next"
+            android:visibility="invisible" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:textSize="@dimen/text_reg"
+            android:text="去注册"
             android:textColor="@color/userCenter_mainBg"
-            android:text="去注册"/>
+            android:textSize="@dimen/text_reg" />
 
         <ImageView
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:rotation="0"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_next"/>
+            android:src="@drawable/ic_next" />
 
     </LinearLayout>
 
@@ -46,18 +46,18 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="60dp"
-        android:gravity="center_vertical"
         android:background="@drawable/login_edittext_bg"
-        android:drawableStart="@drawable/ic_account_normal"
-        android:drawablePadding="8dp"
-        android:textColor="@color/userCenter_666"
+        android:completionThreshold="1"
+        android:drawableStart="@drawable/ic_person_black_24dp"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
         android:hint="请输入账号"
+        android:imeOptions="flagNoExtractUi|flagNoFullscreen"
         android:paddingStart="5dp"
         android:paddingTop="3dp"
         android:paddingBottom="3dp"
-        android:completionThreshold="1"
         android:singleLine="true"
-        android:imeOptions="flagNoExtractUi|flagNoFullscreen"
+        android:textColor="@color/userCenter_666"
         android:textSize="15sp" />
 
     <LinearLayout
@@ -65,12 +65,12 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_below="@+id/piv_login_account"
+        android:layout_gravity="center_vertical"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="60dp"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal"
-        android:background="@drawable/login_edittext_bg">
+        android:background="@drawable/login_edittext_bg"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/et_pwd"
@@ -78,26 +78,26 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableStart="@drawable/ic_password_normal"
-            android:drawablePadding="8dp"
-            android:textColor="@color/userCenter_666"
+            android:drawableStart="@drawable/ic_lock_black_24dp"
+            android:drawablePadding="10dp"
             android:hint="请输入密码"
-            android:singleLine="true"
             android:imeOptions="flagNoExtractUi|flagNoFullscreen"
             android:inputType="textPassword"
             android:paddingStart="5dp"
             android:paddingTop="3dp"
             android:paddingBottom="3dp"
-            android:textSize="15sp"/>
+            android:singleLine="true"
+            android:textColor="@color/userCenter_666"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/cb_pwd_switch"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
+            android:button="@drawable/pass_selector"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:button="@drawable/ic_eye_24dp" />
+            android:paddingRight="5dp" />
     </LinearLayout>
 
     <Button
@@ -105,12 +105,12 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_below="@+id/piv_login_password"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="60dp"
+        android:background="@drawable/login_btn_selector"
         android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/login_btn_bg"
         android:text="登录"
         android:textColor="@android:color/white"
         android:textSize="16sp" />

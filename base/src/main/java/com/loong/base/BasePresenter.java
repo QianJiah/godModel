@@ -2,6 +2,7 @@ package com.loong.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 
 import com.loong.base.http.RetrofitClient;
 import com.loong.base.iPresenter.IPresenter;
@@ -45,13 +46,16 @@ public class BasePresenter<V extends IView> implements IPresenter<V> {
 
     //添加订阅
     public void addSubscribe(Observable<?> observable, BaseObserver observer) {
+        Log.e("hao","aaaaaaaaaaaaaaaa");
         if (disposable == null) {
             disposable = new CompositeDisposable();
         }
+        Log.e("hao","bbbbbbbbbbbbbbbb");
         BaseObserver baseObserver = observable.subscribeOn(Schedulers.newThread())
                                                 .observeOn(AndroidSchedulers.mainThread())
                                                 .subscribeWith(observer);
         disposable.add(baseObserver);
+        Log.e("hao","cccccccccccccccc");
     }
 
     private void unsubscribe() {

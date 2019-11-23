@@ -9,16 +9,16 @@ public class BaseResponse<T> {
     private int errorCode;
     private String errorMsg;
     private T data;
-    private T results;
+//    private T results;
     private boolean isError = true;
 
-    public T getResults() {
+/*    public T getResults() {
         return results;
     }
 
     public void setResults(T results) {
         this.results = results;
-    }
+    }*/
 
     public boolean isError() {
         return isError;

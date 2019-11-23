@@ -11,6 +11,7 @@ import com.loong.base.error.ErrorMsgBean;
 import com.loong.base.util.ToastUtil;
 import com.loong.login.constract.UserCenterContract;
 import com.loong.login.presenter.UserCenterPresenter;
+import com.loong.login.response.JiaYouUser;
 import com.loong.login.response.LoginResult;
 import com.loong.login.response.RegisterResult;
 
@@ -56,7 +57,7 @@ public class RegisterActivity extends MVPBaseActivity<UserCenterPresenter> imple
     }
 
     @Override
-    public void loginSuccess(LoginResult loginResult) {
+    public void loginSuccess(JiaYouUser loginResult) {
 
     }
 

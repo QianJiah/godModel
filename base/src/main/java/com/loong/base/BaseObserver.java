@@ -1,5 +1,7 @@
 package com.loong.base;
 
+import android.util.Log;
+
 import com.loong.base.iView.IView;
 import com.loong.base.error.ErrorMsgBean;
 
@@ -17,22 +19,25 @@ public abstract class BaseObserver<T> extends DisposableObserver<BaseResponse<T>
     }
 
     public BaseObserver(IView baseView) {
+        Log.e("hao","&&&&&&new Observer()");
         this.baseView = baseView;
     }
 
     @Override
     protected void onStart() {
+        Log.e("hao","**********onStart()");
         super.onStart();
         if (baseView != null) {
             baseView.showLoading();
         }
     }
 
-    @Override
+/*    @Override
     public void onNext(BaseResponse<T> tBaseResponse) {
         if (baseView != null) {
             baseView.hideLoading();
         }
+        Log.e("hao", "data:" + tBaseResponse.getData());
         int errorCode = tBaseResponse.getErrorCode();
         String errorMsg = tBaseResponse.getErrorMsg();
         boolean isError = tBaseResponse.isError();
@@ -45,11 +50,20 @@ public abstract class BaseObserver<T> extends DisposableObserver<BaseResponse<T>
         } else {
             onFailed(new ErrorMsgBean(errorCode, errorMsg));
         }
+    }*/
+
+    @Override
+    public void onNext(BaseResponse<T> tBaseResponse) {
+        Log.e("hao", "---------------");
+        T data = tBaseResponse.getData();
+
+        onSuccess(data);
     }
 
     //observer的重写
     @Override
     public void onError(Throwable e) {
+        Log.e("hao", "-------500000000--------");
         onFailed(new ErrorMsgBean(e.hashCode(), e.getMessage()));
     }
 

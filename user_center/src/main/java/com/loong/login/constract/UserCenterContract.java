@@ -2,6 +2,7 @@ package com.loong.login.constract;
 
 import com.loong.base.error.ErrorMsgBean;
 import com.loong.base.iView.IView;
+import com.loong.login.response.JiaYouUser;
 import com.loong.login.response.LoginResult;
 import com.loong.login.response.RegisterResult;
 
@@ -14,7 +15,7 @@ public interface UserCenterContract {
 
     interface View extends IView {
 
-        void loginSuccess(LoginResult loginResult);
+        void loginSuccess(JiaYouUser loginResult);
 
         void loginFailed(ErrorMsgBean e);
 

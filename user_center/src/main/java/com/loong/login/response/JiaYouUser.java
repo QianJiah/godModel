@@ -1,5 +1,7 @@
 package com.loong.login.response;
 
+import androidx.annotation.NonNull;
+
 /**
  * author: Hao
  * date: 2019/11/4 20:02
@@ -7,8 +9,9 @@ package com.loong.login.response;
  */
 public class JiaYouUser {
 
+    private String msg;
     private int status;
-    private Data data;
+    private Data date;
 
     public void setStatus(int status) {
         this.status = status;
@@ -18,14 +21,28 @@ public class JiaYouUser {
         return status;
     }
 
-    public void setData(Data data) {
-        this.data = data;
+    public void setData(Data date) {
+        this.date = date;
     }
 
     public Data getData() {
-        return data;
+        return date;
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "JiaYouUser:[ status:" + status +", data:{ userName:" +date.getUserName() +
+                ",createTime:" + date.getCreateTime() + ",updateTime:" + date.getUpdateTime()+ "} ]";
+    }
 }
 
 class Data {

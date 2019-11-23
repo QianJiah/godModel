@@ -1,6 +1,7 @@
 package com.loong.base.http;
 
 import android.os.Build;
+import android.util.Log;
 
 import com.loong.base.BuildConfig;
 import com.loong.base.interceptor.AddCookieInterceptor;
@@ -27,17 +28,18 @@ public class RetrofitClient {
 
     private RetrofitClient() {
 
-        String baseUrl = "https://www.wanandroid.com/";
+//        String baseUrl = "https://www.wanandroid.com/";
+        String baseUrl = "http://47.74.225.213:8080/";
 
         okHttpClient = new OkHttpClient.Builder()
                                         .connectTimeout(15, TimeUnit.SECONDS)
                                         .readTimeout(15, TimeUnit.SECONDS)
                                         .writeTimeout(15, TimeUnit.SECONDS)
-                                        .addInterceptor(new ReceiveCookieInterceptor())
-                                        .addInterceptor(new AddCookieInterceptor())
+//                                        .addInterceptor(new ReceiveCookieInterceptor())
+//                                        .addInterceptor(new AddCookieInterceptor())
                                         .addInterceptor(getInterceptor())   //设置日志级别
                                         .build();
-
+        Log.e("hao", "baseUrl:  http://47.74.225.213:8080/");
         retrofit = new Retrofit.Builder()
                                 .baseUrl(baseUrl)
                                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
